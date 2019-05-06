@@ -1,0 +1,413 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="An application for students to connect with tutors."
+    />
+    <meta name="theme-color" content="#3F51B5" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.min.css"
+    />
+    <!-- Material Design icon font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Sofia|Work+Sans|Roboto"
+    />
+    <title>GuruChela</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      .mdl-layout__drawer-button > i.material-icons {
+        padding-top: 25%;
+      }
+      .mdl-menu__container.is-upgraded {
+        margin-right: 1rem;
+        right: 1rem !important;
+        top: 55px !important;
+      }
+      .demo-card-wide.mdl-card {
+        width: 100%;
+      }
+      .demo-card-wide > .mdl-card__title {
+        color: #fff;
+        height: 250px;
+        background: url("https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
+          center/cover;
+      }
+      .mdl-tabs__tab {
+        padding: 0 8px;
+      }
+      .mdl-tabs__panel {
+        padding: 1rem 1rem;
+        text-align: center;
+      }
+      #notif-menu {
+        width: 280px;
+        max-height: 50vh;
+      }
+      #login-btn,
+      #reg-btn {
+        padding: 0 2rem;
+      }
+      @media (min-width: 660px) {
+        .demo-card-wide > .mdl-card__title {
+          background-position-y: initial;
+          height: 400px;
+        }
+        .mdl-tabs__tab {
+          padding: 0 24px;
+        }
+        .mdl-tabs__panel {
+          padding: 1rem 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header ">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title" style="font-family:Sofia"
+            >GuruChela</span
+          >
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <button
+              id="notification-menu"
+              class="mdl-button mdl-js-button mdl-button--icon"
+            >
+              <i class="material-icons">notifications</i>
+            </button>
+
+            <ul
+              class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-list"
+              for="notification-menu"
+              id="notif-menu"
+            >
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">person</i>
+                  Bryan Cranston
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">person</i>
+                  Aaron Paul
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">person</i>
+                  Bob Odenkirk
+                </span>
+              </li>
+            </ul>
+            <div
+              class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                              mdl-textfield--floating-label mdl-textfield--align-right"
+            >
+              <label
+                class="mdl-button mdl-js-button mdl-button--icon"
+                for="fixed-header-drawer-exp"
+                id="search-icon"
+              >
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-tooltip" data-mdl-for="search-icon">
+                Search for courses and tutors
+              </div>
+              <div class="mdl-textfield__expandable-holder">
+                <input
+                  class="mdl-textfield__input"
+                  type="search"
+                  name="search"
+                  placeholder="Search for courses and tutors"
+                  id="fixed-header-drawer-exp"
+                />
+              </div>
+            </div>
+            <!-- Right aligned menu below button -->
+            <button
+              id="demo-menu-lower-right"
+              class="mdl-button mdl-js-button mdl-button--icon"
+            >
+              <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul
+              class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+              for="demo-menu-lower-right"
+            >
+              <li class="mdl-menu__item">Some Action</li>
+              <li class="mdl-menu__item">Another Action</li>
+              <li disabled class="mdl-menu__item">Disabled Action</li>
+              <li class="mdl-menu__item">Yet Another Action</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title" style="font-family:Sofia"
+          >GuruChela</span
+        >
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Home</a>
+          <a class="mdl-navigation__link" href="">Requests</a>
+          <a class="mdl-navigation__link" href="">About Us</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <!-- <h2 class="mdl-card__title-text"></h2> -->
+            </div>
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+              <div class="mdl-tabs__tab-bar">
+                <a href="#teacher-login" class="mdl-tabs__tab is-active"
+                  >Teacher's Login</a
+                >
+                <a href="#teacher-reg" class="mdl-tabs__tab"
+                  >Register as Teacher</a
+                >
+              </div>
+
+              <div class="mdl-tabs__panel is-active" id="teacher-login">
+                <form action="" method="POST">
+                  <div
+                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                  >
+                    <input
+                      class="mdl-textfield__input"
+                      type="email"
+                      id="login-email-uname"
+                      name="login-email-uname"
+                      required
+                    />
+                    <label class="mdl-textfield__label" for="email-uname"
+                      >Email</label
+                    >
+                  </div>
+                  <br />
+                  <div
+                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                  >
+                    <input
+                      class="mdl-textfield__input"
+                      type="password"
+                      id="login-password"
+                      name="login-password"
+                      required
+                    />
+                    <label class="mdl-textfield__label" for="login-password"
+                      >Password</label
+                    >
+                  </div>
+                  <br />
+                  <br />
+                  <!-- Colored raised button -->
+                  <input
+                    type="submit"
+                    value="Login"
+                    id="login-btn"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                  />
+                </form>
+              </div>
+              <div class="mdl-tabs__panel" id="teacher-reg">
+                <form action="" method="POST">
+                  <p>* marked fields are required</p>
+                  <div
+                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                  >
+                    <input
+                      class="mdl-textfield__input"
+                      type="text"
+                      id="reg-name"
+                      name="reg-name"
+                      required
+                    />
+                    <label class="mdl-textfield__label" for="email-uname"
+                      >Full Name*</label
+                    >
+                  </div>
+                  <br />
+                  <p style="font-size: 18px;font-weight: 500;margin:0;">
+                    Gender
+                  </p>
+                  <br />
+                  <label
+                    class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                    for="maleOpt"
+                    style="padding-right: 1rem;margin-right: 1rem"
+                  >
+                    <input
+                      type="radio"
+                      id="maleOpt"
+                      name="gender"
+                      class="mdl-radio__button"
+                      required
+                    />
+                    <span class="mdl-radio__label">Male</span>
+                  </label>
+                  <label
+                    class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                    for="femaleOpt"
+                  >
+                    <input
+                      type="radio"
+                      id="femaleOpt"
+                      name="gender"
+                      class="mdl-radio__button"
+                      required
+                    />
+                    <span class="mdl-radio__label">Female</span>
+                  </label>
+
+                  <br />
+                  <div
+                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                  >
+                    <input
+                      class="mdl-textfield__input"
+                      type="email"
+                      id="reg-email"
+                      name="reg-email"
+                      required
+                    />
+                    <label class="mdl-textfield__label" for="reg-email"
+                      >Email*</label
+                    >
+                  </div>
+                  <br />
+                  <div
+                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                  >
+                    <input
+                      class="mdl-textfield__input"
+                      type="text"
+                      id="reg-dept"
+                      name="reg-dept"
+                      list="dept"
+                      required
+                    />
+                    <label class="mdl-textfield__label" for="reg-dept"
+                      >Course/Department*</label
+                    >
+                    <datalist id="dept">
+                      <option value="CSE"> </option>
+                      <option value="IT"> </option>
+                      <option value="ECE"> </option>
+                      <option value="EE"> </option>
+                      <option value="ME"> </option>
+                      <option value="CE"> </option>
+                      <option value="AEIE"> </option>
+                      <option value="BBA"> </option>
+                      <option value="BHM"> </option>
+                      <option value="BBM"> </option>
+                    </datalist>
+                  </div>
+                  <br />
+                  <div
+                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                  >
+                    <input
+                      class="mdl-textfield__input"
+                      type="password"
+                      id="reg-password"
+                      name="reg-password"
+                      required
+                    />
+                    <label class="mdl-textfield__label" for="reg-password"
+                      >Password*</label
+                    >
+                  </div>
+                  <br /><br />
+                  <!-- Colored raised button -->
+                  <input
+                    type="submit"
+                    value="Register"
+                    id="reg-btn"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="mdl-mini-footer">
+          <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo" style="font-family:Sofia;font-size: 2rem">
+              GuruChela
+            </div>
+            <ul class="mdl-mini-footer__link-list">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="scripts/hammer.min.js"></script>
+    <script>
+      window.onload = function() {
+        var req_inp = document.querySelectorAll(".is-invalid");
+        var drawer = document.querySelector("div.mdl-layout__drawer");
+        var drawerShadow = document.querySelector("div.mdl-layout__obfuscator");
+        var login_tab = document.querySelector("#teacher-login");
+        var reg_tab = document.querySelector("#teacher-reg");
+
+        req_inp.forEach((el, i) => {
+          el.firstElementChild.onblur = function(e) {
+            if (e.target.value == "" && e.target.required) {
+              el.classList.add("is-invalid");
+            }
+          };
+          el.classList.remove("is-invalid");
+        });
+
+        var hammertime = new Hammer(document.querySelector("main"));
+        hammertime.on("swiperight", function(ev) {
+          drawerShadow.classList.add("is-visible");
+          drawer.classList.add("is-visible");
+          drawer.setAttribute("aria-hidden", "false");
+        });
+        hammertime.on("swipeleft", function(ev) {
+          drawerShadow.classList.remove("is-visible");
+          drawer.classList.remove("is-visible");
+          drawer.setAttribute("aria-hidden", "true");
+        });
+        var login_ham = new Hammer(login_tab);
+        var reg_ham = new Hammer(reg_tab);
+        login_ham.on("swipeleft", function(e) {
+          login_tab.classList.remove("is-active");
+          reg_tab.classList.add("is-active");
+        });
+        reg_ham.on("swiperight", function(e) {
+          drawerShadow.classList.remove("is-visible");
+          drawer.classList.remove("is-visible");
+          drawer.setAttribute("aria-hidden", "true");
+          login_tab.classList.add("is-active");
+          reg_tab.classList.remove("is-active");
+        });
+      };
+    </script>
+  </body>
+</html>
