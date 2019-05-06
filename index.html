@@ -180,10 +180,13 @@
             </div>
             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
               <div class="mdl-tabs__tab-bar">
-                <a href="#teacher-login" class="mdl-tabs__tab is-active"
+                <a
+                  href="#teacher-login"
+                  class="mdl-tabs__tab is-active"
+                  id="tlogin-tab"
                   >Teacher's Login</a
                 >
-                <a href="#teacher-reg" class="mdl-tabs__tab"
+                <a href="#teacher-reg" class="mdl-tabs__tab" id="treg-tab"
                   >Register as Teacher</a
                 >
               </div>
@@ -399,10 +402,14 @@
         login_ham.on("swipeleft", function(e) {
           login_tab.classList.remove("is-active");
           reg_tab.classList.add("is-active");
+          document.querySelector("#tlogin-tab").classList.remove("is-active");
+          document.querySelector("#treg-tab").classList.add("is-active");
         });
         reg_ham.on("swiperight", function(e) {
           drawerShadow.classList.remove("is-visible");
           drawer.classList.remove("is-visible");
+          document.querySelector("#treg-tab").classList.remove("is-active");
+          document.querySelector("#tlogin-tab").classList.add("is-active");
           drawer.setAttribute("aria-hidden", "true");
           login_tab.classList.add("is-active");
           reg_tab.classList.remove("is-active");
